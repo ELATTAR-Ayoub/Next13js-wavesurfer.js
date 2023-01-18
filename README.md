@@ -1,38 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# WaveSurfer.js for Next.js
+
+This is a tutorial app that demonstrates how to implement the [wavesurfer.js](https://wavesurfer-js.org/) library in a Next.js application. The app provides a step-by-step guide on how to set up and use the wavesurfer library, including how to integrate it with React hooks and handle different events. The app also provides a working example of how to display and control audio waveforms within a Next.js application.
 
 ## Getting Started
 
-First, run the development server:
+1. Clone this repository and run `npm install` or `yarn install` to install the required dependencies.
+2. Start the development server by running `npm run dev` or `yarn dev`.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## How it works
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application uses the `useRef` hook to create a reference to the "waveform" div element, which is used as the container for the waveform visualization. The `create` function is used to import the "wavesurfer.js" library and create an instance of the "WaveSurfer" class, passing in the "waveform" div element as the container. The `load` method is called on the "wavesurfer" object to load the audio file from the specified URL.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The `handlePlayPause` function is used to toggle the playing state of the audio, and it calls the `playPause` method on the "wavesurfer" object to start or pause the playback. The `useEffect` hook is used to call the `create` function when the component is first rendered and to clean up the "wavesurfer" object when the component is unmounted.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+It is using a css-in-js library and some svg components are used for the UI design. The audio file is hardcoded in the url variable and it's not dynamic.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Note
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The project is using a hardcoded audio file for demonstration, you can easily change the audio file by replacing the url variable in the component.
 
-## Learn More
+## Dependencies
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [next.js](https://nextjs.org/)
+- [wavesurfer.js](https://wavesurfer-js.org/)
