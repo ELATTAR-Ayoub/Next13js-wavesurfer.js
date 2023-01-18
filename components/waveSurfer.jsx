@@ -1,11 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 import SolidSvg from '@/components/SolidSVG';
 
 // styles
 import styles from '../styles';
-import wavesurfer from "wavesurfer.js";
 
-const formWaveSurferOptions = (ref: HTMLDivElement) => ({
+const formWaveSurferOptions = (ref) => ({
     container: ref,
     waveColor: "#BBD1EA",
     progressColor: "#507DBC",
@@ -30,10 +29,10 @@ export default function WaveSurferComp() {
     
         return () => {
           if (wavesurfer.current) {
-            (wavesurfer.current as wavesurfer).destroy();
+            wavesurfer.current.destroy();
           }
         };
-      }, []);
+    }, []);
 
     const create = async () => {
         const WaveSurfer = (await import("wavesurfer.js")).default;
@@ -41,12 +40,14 @@ export default function WaveSurferComp() {
         const options = formWaveSurferOptions(waveformRef.current);
         wavesurfer.current = WaveSurfer.create(options);
     
-        wavesurfer.current?.load(url);
+        wavesurfer.current.load(url);
     };
 
     const handlePlayPause = () => {
         setPlaying(!playing);
-        wavesurfer.current?.playPause();
+        if(wavesurfer.current){
+            wavesurfer.current.playPause();
+        }
     };
 
   return (

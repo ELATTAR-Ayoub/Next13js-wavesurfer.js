@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 
 // components
-import WaveSurferComp from '@/components/waveSurfer';
+import WaveSurferComp from '../components/waveSurfer';
 import SolidSvg from '@/components/SolidSVG';
 
 // styles
