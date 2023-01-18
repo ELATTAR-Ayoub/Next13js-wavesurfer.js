@@ -2,6 +2,8 @@
 
 This is a tutorial app that demonstrates how to implement the [wavesurfer.js](https://wavesurfer-js.org/) library in a Next.js application. The app provides a step-by-step guide on how to set up and use the wavesurfer library, including how to integrate it with React hooks and handle different events. The app also provides a working example of how to display and control audio waveforms within a Next.js application.
 
+![App_preview](https://imgur.com/a/aJd1TEe)
+
 ## Getting Started
 
 1. Clone this repository and run `npm install` or `yarn install` to install the required dependencies.
