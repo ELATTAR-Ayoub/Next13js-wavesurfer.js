@@ -3,6 +3,7 @@ import SolidSvg from '@/components/SolidSVG';
 
 // styles
 import styles from '../styles';
+import wavesurfer from "wavesurfer.js";
 
 const formWaveSurferOptions = (ref: HTMLDivElement) => ({
     container: ref,
@@ -29,7 +30,7 @@ export default function WaveSurferComp() {
     
         return () => {
           if (wavesurfer.current) {
-            wavesurfer.current.destroy();
+            (wavesurfer.current as wavesurfer).destroy();
           }
         };
       }, []);
